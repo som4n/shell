@@ -136,5 +136,5 @@ This project is inspired by the need to understand the inner workings of shells 
 
 ## Author
 
-[Your Name](https://github.com/som4n)  
-Feel free to reach out for feedback, questions, or collaboration opportunities!
+[som4n](https://github.com/som4n)  
+Feel free to reach out for feedback, questions, or collaborations!
