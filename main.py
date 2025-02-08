@@ -71,6 +71,8 @@ def main():
                 echo(command_array)
             case "type":
                 type(command_array)
+            case "pwd":
+                print(f"{os.getcwd()}")
             case _:  # Default case
                 if not execute_command(command_array):
                     sys.stdout.write(f"{command}: command not found\n")
