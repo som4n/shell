@@ -4,7 +4,7 @@ import os
 
 def main():
     PATH = os.environ.get('PATH')
-    valid_commands = ["echo", "pwd", "exit", "type"]
+    valid_commands = ["echo", "pwd", "exit", "type" , "pwd"]
 
     def echo(command_array):
         for word in command_array[1:]:
@@ -54,6 +54,35 @@ def main():
                 sys.stderr.flush()
                 return False
         return False
+    
+    def cd(command_array):
+        if len(command_array) < 2:
+            # If no argument is provided, change to the home directory
+            new_dir = os.path.expanduser("~")
+        else:
+            target_dir = command_array[1]
+            # Resolve relative paths to absolute paths
+            if target_dir.startswith(("./", "../")) or not target_dir.startswith("/"):
+                new_dir = os.path.abspath(os.path.join(os.getcwd(), target_dir))
+            else:
+                new_dir = target_dir  # Absolute path
+        
+        try:
+            # Attempt to change the directory
+            os.chdir(new_dir)
+        except FileNotFoundError:
+            sys.stderr.write(f"cd: {new_dir}: No such file or directory\n")
+            sys.stderr.flush()
+        except NotADirectoryError:
+            sys.stderr.write(f"cd: {new_dir}: Not a directory\n")
+            sys.stderr.flush()
+        except PermissionError:
+            sys.stderr.write(f"cd: {new_dir}: Permission denied\n")
+            sys.stderr.flush()
+        except Exception as e:
+            sys.stderr.write(f"cd: {str(e)}\n")
+            sys.stderr.flush()
+
 
     while True:
         sys.stdout.write("$ ")
@@ -73,6 +102,8 @@ def main():
                 type(command_array)
             case "pwd":
                 print(f"{os.getcwd()}")
+            case "cd":
+                cd(command_array)
             case _:  # Default case
                 if not execute_command(command_array):
                     sys.stdout.write(f"{command}: command not found\n")
