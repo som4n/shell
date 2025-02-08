@@ -2,10 +2,9 @@
 
 Welcome to the **Build Your Own Shell** challenge! 🚀
 
-In this project, you'll implement a custom POSIX-compliant shell capable of interpreting shell commands, running external programs, and handling built-in commands like `cd`, `pwd`, `echo`, and more. This project is a great way to deepen your understanding of command-line interfaces, shell command parsing, and process management.
+In this project, WE'll implement a custom POSIX-compliant shell capable of interpreting shell commands, running external programs, and handling built-in commands like `cd`, `pwd`, `echo`, and more. This project is a great way to deepen your understanding of command-line interfaces, shell command parsing, and process management.
 
 ---
-
 ## Features
 
 - **Execute External Commands**: Run external programs directly from your shell.
@@ -28,7 +27,6 @@ Ensure you have the following installed:
 - A POSIX-compliant system (Linux, macOS, or WSL on Windows recommended)
 
 ---
-
 ## Getting Started
 
 1. Clone this repository:
