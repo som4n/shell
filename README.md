@@ -1,6 +1,6 @@
 Welcome to the **Build Your Own Shell** challenge! 🚀
 
-I# PyShell: A Lightweight Python Shell 🐍💻
+I# PyShell: A  Lightweight Python Shell 🐍💻
 
 [![GitHub License](https://img.shields.io/github/license/yourusername/pyshell?color=blue)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/)
